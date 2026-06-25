@@ -1,4 +1,4 @@
-import { createFileRoute, Link, notFound, useRouter } from "@tanstack/react-router";
+import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { useQuery } from "@tanstack/react-query";
 import { useEffect, useState } from "react";
 import { supabase } from "@/integrations/supabase/client";
@@ -139,8 +139,8 @@ function ArticlePage() {
   });
 
   // Split content into paragraphs for ad insertion
-  const paragraphs = article.content.split(/(?=<p)/);
-  const adAfter = new Set([3, 7, 12]);
+  const paragraphs: string[] = String(article.content ?? "").split(/(?=<p)/);
+  const adAfter = new Set<number>([3, 7, 12]);
   const productAfter = 5;
 
   return (
