@@ -6,7 +6,7 @@ import { SkeletonCard } from "@/components/site/SkeletonCard";
 import { AdSlot } from "@/components/site/AdSlot";
 import { CategoryBadge } from "@/components/site/CategoryBadge";
 import { Sidebar } from "@/components/site/Sidebar";
-import { useState } from "react";
+import { Fragment, useState } from "react";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -75,16 +75,19 @@ function HomePage() {
         <div>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {isLoading && Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
-            {rest.map((a, i) => (
-              <>
-                <ArticleCard key={a.id} article={a} />
-                {((i + 1) % 6 === 0 || ((i + 1) % 4 === 0)) && (
-                  <div key={`ad-${i}`} className="md:col-span-2 xl:col-span-3">
-                    <AdSlot variant="in-feed" />
-                  </div>
-                )}
-              </>
-            ))}
+            {rest.map((a, i) => {
+              const showAd = (i + 1) % 6 === 0;
+              return (
+                <Fragment key={a.id}>
+                  <ArticleCard article={a} />
+                  {showAd && (
+                    <div className="md:col-span-2 xl:col-span-3">
+                      <AdSlot variant="in-feed" />
+                    </div>
+                  )}
+                </Fragment>
+              );
+            })}
           </div>
           {articles && articles.length >= limit && (
             <div className="mt-10 text-center">
