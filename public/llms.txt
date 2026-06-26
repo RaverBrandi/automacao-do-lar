@@ -1,0 +1,17 @@
+# Automação do Lar
+
+> Portal brasileiro de notícias, análises e guias sobre casa inteligente, automação residencial e IoT — cobrindo Alexa, Google Home, Matter, segurança, iluminação e ofertas.
+
+## Pages
+
+- [Home](/): Últimas notícias e destaques de smart home no Brasil.
+- [Login](/login): Acesso de leitores para favoritar artigos.
+
+## Categories
+
+- [Casa Inteligente](/categoria/casa-inteligente): Notícias gerais de automação residencial.
+- [Alexa](/categoria/alexa): Tudo sobre a assistente da Amazon e dispositivos Echo.
+- [Google Home](/categoria/google-home): Novidades do ecossistema Google.
+- [Matter & Thread](/categoria/matter-thread): Padrão universal de interoperabilidade.
+- [Segurança](/categoria/seguranca): Câmeras, fechaduras e alarmes inteligentes.
+- [Iluminação](/categoria/iluminacao): Lâmpadas e fitas LED conectadas.
