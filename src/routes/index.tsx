@@ -13,9 +13,11 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Automação do Lar — Notícias de casa inteligente e IoT" },
       { name: "description", content: "Tudo sobre automação residencial, Alexa, Google Home, segurança e ofertas de smart home no Brasil." },
-      { property: "og:title", content: "Automação do Lar" },
-      { property: "og:description", content: "Notícias e reviews de casa inteligente e IoT." },
+      { property: "og:title", content: "Automação do Lar — Notícias de casa inteligente e IoT" },
+      { property: "og:description", content: "Notícias e reviews de casa inteligente e IoT no Brasil." },
+      { property: "og:url", content: "https://automacao-do-lar.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://automacao-do-lar.lovable.app/" }],
   }),
   component: HomePage,
 });
@@ -44,6 +46,7 @@ function HomePage() {
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 md:px-6 py-6 md:py-8">
+      <h1 className="sr-only">Automação do Lar — Notícias de casa inteligente e IoT no Brasil</h1>
       <div className="mb-6">
         <AdSlot variant="leaderboard" />
       </div>
