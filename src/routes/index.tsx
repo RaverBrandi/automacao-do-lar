@@ -67,7 +67,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
             {hero.categories && <CategoryBadge name={hero.categories.name} slug={hero.categories.slug} asLink={false} size="md" />}
-            <h1 className="mt-3 text-2xl md:text-5xl font-extrabold leading-tight max-w-3xl">{hero.title}</h1>
+            <h2 className="mt-3 text-2xl md:text-5xl font-extrabold leading-tight max-w-3xl">{hero.title}</h2>
             <p className="mt-3 hidden md:block text-base text-white/85 max-w-2xl line-clamp-2">{hero.excerpt}</p>
           </div>
         </Link>
@@ -76,6 +76,7 @@ function HomePage() {
       {/* Content + Sidebar */}
       <div className="grid lg:grid-cols-[1fr_320px] gap-8">
         <div>
+          <h2 className="text-xl font-bold mb-4">Últimas Notícias</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {isLoading && Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
             {rest.map((a, i) => {
