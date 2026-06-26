@@ -13,9 +13,11 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: "Automação do Lar — Notícias de casa inteligente e IoT" },
       { name: "description", content: "Tudo sobre automação residencial, Alexa, Google Home, segurança e ofertas de smart home no Brasil." },
-      { property: "og:title", content: "Automação do Lar" },
-      { property: "og:description", content: "Notícias e reviews de casa inteligente e IoT." },
+      { property: "og:title", content: "Automação do Lar — Notícias de casa inteligente e IoT" },
+      { property: "og:description", content: "Notícias e reviews de casa inteligente e IoT no Brasil." },
+      { property: "og:url", content: "https://automacao-do-lar.lovable.app/" },
     ],
+    links: [{ rel: "canonical", href: "https://automacao-do-lar.lovable.app/" }],
   }),
   component: HomePage,
 });
@@ -44,6 +46,7 @@ function HomePage() {
 
   return (
     <div className="mx-auto max-w-[1280px] px-4 md:px-6 py-6 md:py-8">
+      <h1 className="sr-only">Automação do Lar — Notícias de casa inteligente e IoT no Brasil</h1>
       <div className="mb-6">
         <AdSlot variant="leaderboard" />
       </div>
@@ -64,7 +67,7 @@ function HomePage() {
           <div className="absolute inset-0 bg-gradient-to-t from-black/85 via-black/30 to-transparent" />
           <div className="absolute bottom-0 left-0 right-0 p-6 md:p-10 text-white">
             {hero.categories && <CategoryBadge name={hero.categories.name} slug={hero.categories.slug} asLink={false} size="md" />}
-            <h1 className="mt-3 text-2xl md:text-5xl font-extrabold leading-tight max-w-3xl">{hero.title}</h1>
+            <h2 className="mt-3 text-2xl md:text-5xl font-extrabold leading-tight max-w-3xl">{hero.title}</h2>
             <p className="mt-3 hidden md:block text-base text-white/85 max-w-2xl line-clamp-2">{hero.excerpt}</p>
           </div>
         </Link>
@@ -73,6 +76,7 @@ function HomePage() {
       {/* Content + Sidebar */}
       <div className="grid lg:grid-cols-[1fr_320px] gap-8">
         <div>
+          <h2 className="text-xl font-bold mb-4">Últimas Notícias</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
             {isLoading && Array.from({ length: 6 }).map((_, i) => <SkeletonCard key={i} />)}
             {rest.map((a, i) => {
