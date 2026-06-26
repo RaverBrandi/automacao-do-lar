@@ -26,7 +26,7 @@ export function Sidebar({ popular }: { popular: ArticleCardData[] }) {
       <AdSlot variant="sidebar" />
 
       <section>
-        <h3 className="text-lg font-bold mb-4 flex items-center gap-2">📈 Mais Lidas</h3>
+        <h2 className="text-lg font-bold mb-4 flex items-center gap-2">📈 Mais Lidas</h2>
         <ul className="space-y-3">
           {popular.slice(0, 5).map((a, i) => (
             <li key={a.id}>
@@ -48,7 +48,7 @@ export function Sidebar({ popular }: { popular: ArticleCardData[] }) {
       </section>
 
       <section>
-        <h3 className="text-lg font-bold mb-4">Categorias</h3>
+        <h2 className="text-lg font-bold mb-4">Categorias</h2>
         <ul className="grid grid-cols-2 gap-2">
           {CATS.map((c) => (
             <li key={c.slug}>
@@ -65,7 +65,7 @@ export function Sidebar({ popular }: { popular: ArticleCardData[] }) {
       </section>
 
       <section>
-        <h3 className="text-lg font-bold mb-4">Ofertas Selecionadas</h3>
+        <h2 className="text-lg font-bold mb-4">Ofertas Selecionadas</h2>
         <div className="space-y-3">
           {AFFILIATES.map((p) => (
             <div key={p.title} className="flex gap-3 rounded-xl border border-border p-3 bg-card">

@@ -4,7 +4,16 @@ import { supabase } from "@/integrations/supabase/client";
 import { toast } from "sonner";
 
 export const Route = createFileRoute("/login")({
-  head: () => ({ meta: [{ title: "Entrar — Automação do Lar" }] }),
+  head: () => ({
+    meta: [
+      { title: "Entrar — Automação do Lar" },
+      { name: "description", content: "Acesse sua conta no Automação do Lar para salvar artigos favoritos e acompanhar as novidades de casa inteligente." },
+      { property: "og:title", content: "Entrar — Automação do Lar" },
+      { property: "og:description", content: "Faça login para favoritar artigos e personalizar sua experiência no portal." },
+      { property: "og:url", content: "https://automacao-do-lar.lovable.app/login" },
+    ],
+    links: [{ rel: "canonical", href: "https://automacao-do-lar.lovable.app/login" }],
+  }),
   component: LoginPage,
 });
 
